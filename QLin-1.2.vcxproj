@@ -10,6 +10,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array\DeviceArray.cuh" />
+    <ClInclude Include="Array\HostArray.h" />
+    <ClInclude Include="Array\HostManagedDeviceArray.cuh" />
+    <ClInclude Include="Device\Device.h" />
+    <ClInclude Include="Device\DeviceError.h" />
+    <ClInclude Include="Device\DeviceMemory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Device\Device.cpp" />
+    <ClCompile Include="Device\DeviceError.cpp" />
+    <ClCompile Include="Device\DeviceMemory.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{49C8A5CE-C529-4975-8A6A-6F8410945CCB}</ProjectGuid>
     <RootNamespace>QLin_1_2</RootNamespace>
@@ -47,6 +60,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

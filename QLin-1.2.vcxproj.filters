@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Array">
+      <UniqueIdentifier>{abf624b1-c6b5-4576-a23f-2951530baf42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Device">
+      <UniqueIdentifier>{111032e1-14ac-480d-a403-9715d82488b7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array\DeviceArray.cuh">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Array\HostManagedDeviceArray.cuh">
+      <Filter>Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\Device.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\DeviceError.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Device\DeviceMemory.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Array\HostArray.h">
+      <Filter>Array</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Device\Device.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\DeviceError.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device\DeviceMemory.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
