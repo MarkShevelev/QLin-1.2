@@ -36,6 +36,9 @@
     <ClInclude Include="Solver\TransposeKernel.cuh">
       <Filter>Solver</Filter>
     </ClInclude>
+    <ClInclude Include="Solver\ArrayTranspose.cuh">
+      <Filter>Solver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Device\Device.cpp">

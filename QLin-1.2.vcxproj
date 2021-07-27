@@ -17,6 +17,7 @@
     <ClInclude Include="Device\Device.h" />
     <ClInclude Include="Device\DeviceError.h" />
     <ClInclude Include="Device\DeviceMemory.h" />
+    <ClInclude Include="Solver\ArrayTranspose.cuh" />
     <ClInclude Include="Solver\DeviceThomsonSweep.cuh" />
     <ClInclude Include="Solver\TransposeKernel.cuh" />
   </ItemGroup>
