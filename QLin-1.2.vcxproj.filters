@@ -7,6 +7,9 @@
     <Filter Include="Device">
       <UniqueIdentifier>{111032e1-14ac-480d-a403-9715d82488b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Solver">
+      <UniqueIdentifier>{d4001caa-f36c-455c-809b-235596eaf9e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array\DeviceArray.cuh">
