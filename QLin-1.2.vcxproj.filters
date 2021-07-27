@@ -30,7 +30,9 @@
     <ClInclude Include="Array\HostArray.h">
       <Filter>Array</Filter>
     </ClInclude>
-    <ClInclude Include="Solver\DeviceThomsonSweep.cuh" />
+    <ClInclude Include="Solver\DeviceThomsonSweep.cuh">
+      <Filter>Solver</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Device\Device.cpp">
