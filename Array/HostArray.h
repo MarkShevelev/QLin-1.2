@@ -36,6 +36,10 @@ namespace iki {
         T& operator()(size_t idx) {
             return h_mem[idx];
         }
+
+        size_t get_full_size() const {
+            return size;
+        }
     };
 
     template <typename T>
@@ -73,6 +77,10 @@ namespace iki {
 
         void swap_sizes() {
             std::swap(y_size, x_size);
+        }
+
+        size_t get_full_size() const {
+            return y_size * x_size;
         }
     };
 }/*iki*/
