@@ -31,4 +31,26 @@ namespace iki {
 				throw iki::DeviceError("can't transfer data from host to device: ", cudaStatus);
 		}
 	}
+
+	template <typename T, size_t Dim>
+	void transfer(iki::DeviceArray<T, Dim> from, iki::HostArray<T, Dim> to) {
+		if (from.get_full_size() != to.get_full_size())
+			throw std::runtime_error("can't transfer data: arrays of different sizes");
+		{
+			cudaError_t cudaStatus;
+			if (cudaSuccess != (cudaStatus = cudaMemcpy(to.data(), from.data, from.get_full_size() * sizeof(T), cudaMemcpyDeviceToHost)))
+				throw iki::DeviceError("can't transfer data from device to host: ", cudaStatus);
+		}
+	}
+
+	template <typename T, size_t Dim>
+	void transfer(iki::HostManagedDeviceArray<T, Dim> from, iki::HostArray<T, Dim> to) {
+		if (from.get_full_size() != to.get_full_size())
+			throw std::runtime_error("can't transfer data: arrays of different sizes");
+		{
+			cudaError_t cudaStatus;
+			if (cudaSuccess != (cudaStatus = cudaMemcpy(to.data(), from.data(), from.get_full_size() * sizeof(T), cudaMemcpyDeviceToHost)))
+				throw iki::DeviceError("can't transfer data from device to host: ", cudaStatus);
+		}
+	}
 }/*iki*/
