@@ -13,13 +13,13 @@ namespace iki {
 		if (0 == ln_idx || a.x_size - 1 <= ln_idx) return;
 
 		//index of the element in a line
-		unsigned el_idx_begin = blockIdx.y * blockDim.y + threadIdx.y;
+		unsigned el_idx_begin = blockIdx.y * blockDim.y * REPEAT + threadIdx.y;
 
 		for (unsigned el_cnt = 0; el_cnt != REPEAT; ++el_cnt) {
 			auto el_idx = el_idx_begin + blockDim.y * el_cnt;
 			if (0 == el_idx || a.y_size - 1 <= el_idx) continue;
-
-			a(el_idx, ln_idx) = 2 / (steps(el_idx - 1) * (steps(el_idx - 1) + steps(el_idx));
+			
+			a(el_idx, ln_idx) = 2 / (steps(el_idx - 1) * (steps(el_idx - 1) + steps(el_idx)));
 		}
 	}
 }/*iki*/
