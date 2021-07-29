@@ -45,7 +45,7 @@ namespace iki {
     template <typename T>
     class HostArray<T, 2u> final {
     private:
-        size_t y_size, x_size
+        size_t y_size, x_size;
         std::vector<T> h_mem;
 
     public:
