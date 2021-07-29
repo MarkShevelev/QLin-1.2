@@ -11,9 +11,9 @@ namespace iki {
         size_t const size; 
         T *const data; //device pointer
 
-        __host__ __device__ Array(size_t size, T *data) : size(size), data(data) { }
+        __host__ __device__ DeviceArray(size_t size, T *data) : size(size), data(data) { }
 
-        __host__ __device__ get_full_size() const {
+        __host__ __device__ size_t get_full_size() const {
             return size;
         }
 
@@ -28,12 +28,12 @@ namespace iki {
 
     template<typename T>
     struct DeviceArray<T, 2u> final {
-        size_t const y_size, const x_size;
+        size_t const y_size, x_size;
         T *const data; //device pointer
 
-        __host__ __device__ Array(size_t y_size, size_t x_size, T *data) : y_size(y_size), x_size(x_size), data(data) { }
+        __host__ __device__ DeviceArray(size_t y_size, size_t x_size, T *data) : y_size(y_size), x_size(x_size), data(data) { }
 
-        __host__ __device__ get_full_size() const {
+        __host__ __device__ size_t get_full_size() const {
             return y_size * x_size;
         }
 
