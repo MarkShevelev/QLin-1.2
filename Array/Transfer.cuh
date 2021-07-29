@@ -11,7 +11,7 @@
 
 namespace iki {
 	template <typename T, size_t Dim>
-	void transfer(iki::HostArray<T,Dim> from, iki::DeviceArray<T,Dim> to) {
+	void transfer(iki::HostArray<T,Dim> const &from, iki::DeviceArray<T,Dim> to) {
 		if (from.get_full_size() != to.get_full_size())
 			throw std::runtime_error("can't transfer data: arrays of different sizes");
 		{
@@ -22,7 +22,7 @@ namespace iki {
 	}
 
 	template <typename T, size_t Dim>
-	void transfer(iki::HostArray<T, Dim> from, iki::HostManagedDeviceArray<T, Dim> to) {
+	void transfer(iki::HostArray<T, Dim> const &from, iki::HostManagedDeviceArray<T, Dim> &to) {
 		if (from.get_full_size() != to.get_full_size())
 			throw std::runtime_error("can't transfer data: arrays of different sizes");
 		{
@@ -33,7 +33,7 @@ namespace iki {
 	}
 
 	template <typename T, size_t Dim>
-	void transfer(iki::DeviceArray<T, Dim> from, iki::HostArray<T, Dim> to) {
+	void transfer(iki::DeviceArray<T, Dim> const from, iki::HostArray<T, Dim> &to) {
 		if (from.get_full_size() != to.get_full_size())
 			throw std::runtime_error("can't transfer data: arrays of different sizes");
 		{
@@ -44,7 +44,7 @@ namespace iki {
 	}
 
 	template <typename T, size_t Dim>
-	void transfer(iki::HostManagedDeviceArray<T, Dim> from, iki::HostArray<T, Dim> to) {
+	void transfer(iki::HostManagedDeviceArray<T, Dim> const &from, iki::HostArray<T, Dim> &to) {
 		if (from.get_full_size() != to.get_full_size())
 			throw std::runtime_error("can't transfer data: arrays of different sizes");
 		{
