@@ -68,11 +68,11 @@ namespace iki {
         }
 
         T operator()(size_t y_idx, size_t x_idx) const {
-            return host_memory[y_idx * x_size + x_idx];
+            return h_mem[y_idx * x_size + x_idx];
         }
 
         T &operator()(size_t y_idx, size_t x_idx) {
-            return host_memory[y_idx * x_size + x_idx];
+            return h_mem[y_idx * x_size + x_idx];
         }
 
         void swap_sizes() {
