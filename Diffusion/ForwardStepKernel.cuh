@@ -7,7 +7,7 @@
 
 namespace iki {
 	template<typename T>
-	__global__ void forward_step_kernel(
+	__global__ void forward_step_abc_kernel(
 		DeviceArray<T,2u> a, 
 		DeviceArray<T,2u> b, 
 		DeviceArray<T,2u> c, 
@@ -28,8 +28,8 @@ namespace iki {
 			auto el_idx = el_idx_begin + blockDim.y * el_cnt;
 			if (0 == el_idx || a.y_size - 1 <= el_idx) continue;
 
-			auto left = 2 * dt * dfc_along(el_idx - 1, ln_idx) / steps(el_idx - 1) / (steps(el_idx - 1) + steps(el_idx));
-			auto right = 2 * dt * dfc_along(el_idx, ln_idx) / steps(el_idx) / (steps(el_idx - 1) + steps(el_idx));
+			auto left = dt * dfc_along(el_idx - 1, ln_idx) / steps(el_idx - 1) / (steps(el_idx - 1) + steps(el_idx));
+			auto right = dt * dfc_along(el_idx, ln_idx) / steps(el_idx) / (steps(el_idx - 1) + steps(el_idx));
 			
 			a(el_idx, ln_idx) = -left;
 			c(el_idx, ln_idx) = -right;
