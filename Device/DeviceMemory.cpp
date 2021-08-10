@@ -27,21 +27,15 @@ namespace iki {
 		return *this;
 	}
 
-	DeviceMemory::DeviceMemory(DeviceMemory &&src) : device_ptr(src.device_ptr), byte_size(src.byte_size) {
+	DeviceMemory::DeviceMemory(DeviceMemory &&src) noexcept: device_ptr(src.device_ptr), byte_size(src.byte_size) {
 		src.device_ptr = nullptr;
 		src.byte_size = 0;
 	}
 
-	DeviceMemory& DeviceMemory::operator=(DeviceMemory &&src) {
+	DeviceMemory& DeviceMemory::operator=(DeviceMemory &&src) noexcept {
 		DeviceMemory tmp(move(src));
 		std::swap(tmp.device_ptr, device_ptr);
 		std::swap(tmp.byte_size, byte_size);
 		return *this;
 	}
-
-	void DeviceMemory::swap(DeviceMemory &src) {
-		std::swap(device_ptr,src.device_ptr);
-		std::swap(byte_size,src.byte_size);
-	}
-
 }/*iki*/
