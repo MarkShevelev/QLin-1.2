@@ -14,10 +14,17 @@ namespace iki {
 
     template<typename T>
     struct HostManagedDeviceArray<T, 1u> final {
+    private:
         size_t size;
         DeviceMemory d_mem; //managed device memory
 
+    public:
         HostManagedDeviceArray(size_t size) : size(size), d_mem(size * sizeof(T)) { }
+
+        HostManagedDeviceArray(HostManagedDeviceArray<T, 1u> const &src) = default;
+        HostManagedDeviceArray(HostManagedDeviceArray<T, 1u> &&src) = default;
+        HostManagedDeviceArray& operator=(HostManagedDeviceArray<T, 1u> const &src) = default;
+        HostManagedDeviceArray& operator=(HostManagedDeviceArray<T, 1u> &&src) = default;
 
         DeviceArray<T, 1u> array() const {
             return DeviceArray<T,1u>(size, d_mem.as<T>());
@@ -42,10 +49,17 @@ namespace iki {
 
     template<typename T>
     struct HostManagedDeviceArray<T, 2u> final {
+    private:
         size_t y_size, x_size;
         DeviceMemory d_mem; //managed device memory
 
+    public:
         HostManagedDeviceArray(size_t y_size, size_t x_size) : y_size(y_size), x_size(x_size), d_mem(y_size * x_size * sizeof(T)) { }
+
+        HostManagedDeviceArray(HostManagedDeviceArray<T, 2u> const &src) = default;
+        HostManagedDeviceArray(HostManagedDeviceArray<T, 2u> && src) = default;
+        HostManagedDeviceArray &operator=(HostManagedDeviceArray<T, 2u> const &src) = default;
+        HostManagedDeviceArray &operator=(HostManagedDeviceArray<T, 2u> && src) = default;
 
         DeviceArray<T, 2u> array() const {
             return DeviceArray<T,2u>(y_size, x_size, d_mem.as<T>());
