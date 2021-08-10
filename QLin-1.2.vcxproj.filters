@@ -54,6 +54,9 @@
     <ClInclude Include="Diffusion\DeviceNonuniformGrid.cuh">
       <Filter>Diffusion</Filter>
     </ClInclude>
+    <ClInclude Include="Diffusion\HostManagedDeviceNonuniformGrid.cuh">
+      <Filter>Diffusion</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Device\Device.cpp">

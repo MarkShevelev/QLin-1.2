@@ -21,6 +21,7 @@
     <ClInclude Include="Diffusion\DeviceNonuniformGrid.cuh" />
     <ClInclude Include="Diffusion\ForwardStepCorrectionKernel.cuh" />
     <ClInclude Include="Diffusion\ForwardStepKernel.cuh" />
+    <ClInclude Include="Diffusion\HostManagedDeviceNonuniformGrid.cuh" />
     <ClInclude Include="Solver\ArrayTranspose.cuh" />
     <ClInclude Include="Solver\DeviceThomsonSweep.cuh" />
     <ClInclude Include="Solver\TransposeKernel.cuh" />
