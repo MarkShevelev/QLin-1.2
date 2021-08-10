@@ -16,13 +16,13 @@ namespace iki {
 
 	template <typename T>
 	struct DeviceNonuniformGrid<T, 1u> {
-		DeviceNonuniformGrid(DeviceNonuniformAxis<T> along) : along(along) { }
+		__device__ __host__ DeviceNonuniformGrid(DeviceNonuniformAxis<T> along) : along(along) { }
 		DeviceNonuniformAxis along;
 	};
 
 	template <typename T>
 	struct DeviceNonuniformGrid<T, 2u> {
-		DeviceNonuniformGrid(DeviceNonuniformAxis<T> along, DeviceNonuniformAxis<T> perp): along(along), perp(perp) { }
+		__device__ __host__ DeviceNonuniformGrid(DeviceNonuniformAxis<T> along, DeviceNonuniformAxis<T> perp): along(along), perp(perp) { }
 		DeviceNonuniformAxis along, perp;
 	};
 }/*iki*/
