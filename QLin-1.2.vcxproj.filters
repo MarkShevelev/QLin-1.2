@@ -48,6 +48,9 @@
     <ClInclude Include="Diffusion\ForwardStepKernel.cuh">
       <Filter>Diffusion</Filter>
     </ClInclude>
+    <ClInclude Include="Diffusion\ForwardStepCorrectionKernel.cuh">
+      <Filter>Diffusion</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Device\Device.cpp">
