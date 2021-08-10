@@ -18,6 +18,7 @@
     <ClInclude Include="Device\Device.h" />
     <ClInclude Include="Device\DeviceError.h" />
     <ClInclude Include="Device\DeviceMemory.h" />
+    <ClInclude Include="Diffusion\DeviceNonuniformGrid.cuh" />
     <ClInclude Include="Diffusion\ForwardStepCorrectionKernel.cuh" />
     <ClInclude Include="Diffusion\ForwardStepKernel.cuh" />
     <ClInclude Include="Solver\ArrayTranspose.cuh" />
