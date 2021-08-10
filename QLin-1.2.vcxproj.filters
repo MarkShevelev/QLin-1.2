@@ -13,6 +13,9 @@
     <Filter Include="Diffusion">
       <UniqueIdentifier>{d9514839-52a4-4f2c-a38f-8c3c125f81e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Grid">
+      <UniqueIdentifier>{f7e61855-f5bb-49bc-ae03-203c8e41f694}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array\DeviceArray.cuh">
@@ -56,6 +59,12 @@
     </ClInclude>
     <ClInclude Include="Diffusion\HostManagedDeviceNonuniformGrid.cuh">
       <Filter>Diffusion</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid\DeviceNonuniformGrid.cuh">
+      <Filter>Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid\HostManagedDeviceNonuniformGrid.cuh">
+      <Filter>Grid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
