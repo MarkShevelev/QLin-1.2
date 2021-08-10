@@ -36,10 +36,10 @@
     <ClInclude Include="Solver\TransposeKernel.cuh">
       <Filter>Solver</Filter>
     </ClInclude>
-    <ClInclude Include="Solver\ArrayTranspose.cuh">
+    <ClInclude Include="Array\Transfer.cuh">
       <Filter>Array</Filter>
     </ClInclude>
-    <ClInclude Include="Array\Transfer.cuh">
+    <ClInclude Include="Solver\ArrayTranspose.cuh">
       <Filter>Array</Filter>
     </ClInclude>
   </ItemGroup>
