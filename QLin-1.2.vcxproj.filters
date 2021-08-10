@@ -37,7 +37,7 @@
       <Filter>Solver</Filter>
     </ClInclude>
     <ClInclude Include="Solver\ArrayTranspose.cuh">
-      <Filter>Solver</Filter>
+      <Filter>Array</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
