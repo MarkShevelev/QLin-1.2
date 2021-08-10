@@ -6,9 +6,9 @@ namespace iki {
 		DeviceMemory(size_t byte_size);
 
 		DeviceMemory(DeviceMemory const &src);
-		DeviceMemory(DeviceMemory &&src);
+		DeviceMemory(DeviceMemory &&src) noexcept;
 		DeviceMemory& operator=(DeviceMemory const &src);
-		DeviceMemory& operator=(DeviceMemory &&src);
+		DeviceMemory& operator=(DeviceMemory &&src) noexcept;
 
 		void* get() const {
 			return device_ptr;
@@ -22,8 +22,6 @@ namespace iki {
 		size_t get_size() const {
 			return byte_size;
 		}
-
-		void swap(DeviceMemory &src);
 
 	private:
 		void *device_ptr;
